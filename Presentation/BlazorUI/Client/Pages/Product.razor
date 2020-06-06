@@ -1,12 +1,12 @@
 ﻿@page "/product"
 
-@inject BlazorUI.Client.Services.ProductService _producService;
+@inject ProductService _producService;
 
 @if (_producService.Products != null)
 {
     @foreach (var product in _producService.Products)
     {
-        <h2>@product.Name</h2>
+        <ProductGrid Product="product"></ProductGrid>
     }
 }
 else
