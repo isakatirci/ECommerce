@@ -7,6 +7,10 @@ using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
 using Core.Utilities.Security.Jwt;
 using Data.UnitOfWork;
+using Business.Managers;
+using Business.Interfaces;
+using Data.Repository;
+using Data.Interface;
 
 namespace Business.DependencyResolvers.Autofac
 {
@@ -15,9 +19,13 @@ namespace Business.DependencyResolvers.Autofac
         protected override void Load(ContainerBuilder builder)
         {
 
+            builder.RegisterType<ProductBusiness>().As<IProductBusiness>();
+            builder.RegisterType<ProductRepository>().As<IProductRepository>();
+
+
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
-             
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

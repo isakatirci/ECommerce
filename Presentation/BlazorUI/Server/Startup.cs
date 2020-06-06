@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using Data.Repository.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlazorUI.Server
 {
@@ -25,6 +27,10 @@ namespace BlazorUI.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddHttpClient();
+
+            services.AddDbContext<ECommerceContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ECommerce"), b => b.MigrationsAssembly("Data")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

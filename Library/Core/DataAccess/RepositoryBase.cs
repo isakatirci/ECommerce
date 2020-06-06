@@ -4,20 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Core.DataAccess.EntityFramework
+namespace Core.DataAccess
 {
-    public class EfRepositoryBase<TEntity> : IRepository<TEntity>
+    public class RepositoryBase<TEntity> : IRepository<TEntity>
     where TEntity : class, IEntity, new()
     {
         private readonly DbContext _context;
 
-        public EfRepositoryBase(DbContext context)
+        public RepositoryBase(DbContext context)
         {
             _context = context;
             TableRaw = _context.Set<TEntity>();
         }
 
-        ~EfRepositoryBase()
+        ~RepositoryBase()
         {
             _context.Dispose();
         }

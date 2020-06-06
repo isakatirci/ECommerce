@@ -9,6 +9,7 @@ namespace Data.UnitOfWork
     public interface IUnitOfWork : IDisposable
     {
         IRepository<Category> Category { get; }
+        IRepository<Product> Product { get; }
 
         void SaveChanges();
     }

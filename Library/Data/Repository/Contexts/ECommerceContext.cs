@@ -3,7 +3,7 @@ using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Data.Repository.EntityFramework.Contexts
+namespace Data.Repository.Contexts
 {
     public partial class ECommerceContext : DbContext
     {

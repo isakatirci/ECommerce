@@ -1,0 +1,24 @@
+﻿@page "/product"
+
+@inject BlazorUI.Client.Services.ProductService _producService;
+
+@if (_producService.Products != null)
+{
+    @foreach (var product in _producService.Products)
+    {
+        <h2>@product.Name</h2>
+    }
+}
+else
+{
+    <Loading></Loading>
+}
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        await _producService.GetProductList();
+        base.OnInitialized();
+    }
+}

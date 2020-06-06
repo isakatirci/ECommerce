@@ -1,7 +1,6 @@
 ﻿using Core.DataAccess;
-using Core.DataAccess.EntityFramework;
 using Core.Entities;
-using Data.Repository.EntityFramework.Contexts;
+using Data.Repository.Contexts;
 using Entities.Models;
 using System;
 
@@ -14,10 +13,13 @@ namespace Data.UnitOfWork
 
         #region Lazy
         private readonly Lazy<IRepository<Category>> _category;
+        private readonly Lazy<IRepository<Product>> _product;
         #endregion
 
         #region RepoInitiate
         public IRepository<Category> Category => _category.Value;
+
+        public IRepository<Product> Product => _product.Value;
 
 
         #endregion
@@ -33,6 +35,7 @@ namespace Data.UnitOfWork
             }
 
             _category = CreateRepo<Category>();
+            _product = CreateRepo<Product>();
         }
 
         #endregion
@@ -55,7 +58,7 @@ namespace Data.UnitOfWork
 
         private Lazy<IRepository<TModel>> CreateRepo<TModel>() where TModel : class, IEntity, new()
         {
-            return new Lazy<IRepository<TModel>>(() => new EfRepositoryBase<TModel>(_dbContext));
+            return new Lazy<IRepository<TModel>>(() => new RepositoryBase<TModel>(_dbContext));
         }
 
         public void Dispose()

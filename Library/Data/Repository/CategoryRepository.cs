@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Repository.EntityFramework
+namespace Data.Repository
 {
-    public class EfCategoryRepository : ICategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly IUnitOfWork _uow;
 
-        public EfCategoryRepository(IUnitOfWork uow)
+        public CategoryRepository(IUnitOfWork uow)
         {
             _uow = uow;
         }
