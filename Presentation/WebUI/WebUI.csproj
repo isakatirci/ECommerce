@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Library\Business\Business.csproj" />
+    <ProjectReference Include="..\WebUI.Framework\WebUI.Framework.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,7 @@
     <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Areas\Identity\Models\" />
     <Folder Include="Areas\Identity\Views\" />
+    <Folder Include="wwwroot\Themes\" />
   </ItemGroup>
 
 </Project>
