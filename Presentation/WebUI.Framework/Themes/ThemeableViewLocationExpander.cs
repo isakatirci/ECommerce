@@ -13,8 +13,8 @@ namespace WebUI.Framework.Themes
             if (context.Values.TryGetValue(THEME_KEY, out string theme))
             {
                 viewLocations = new[] {
-                        $"/Themes/{theme}/{{1}}/{{0}}.cshtml",
-                        $"/Themes/{theme}/Shared/{{0}}.cshtml",
+                        $"/Themes/{theme}/Views/{{1}}/{{0}}.cshtml",
+                        $"/Themes/{theme}/Views/Shared/{{0}}.cshtml",
                     }
                     .Concat(viewLocations);
             }

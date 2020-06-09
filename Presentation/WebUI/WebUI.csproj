@@ -24,7 +24,8 @@
     <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Areas\Identity\Models\" />
     <Folder Include="Areas\Identity\Views\" />
-    <Folder Include="wwwroot\Themes\" />
+    <Folder Include="Themes\Default\Views\Home\" />
+    <Folder Include="Themes\Default\Views\Shared\" />
   </ItemGroup>
 
 </Project>
