@@ -5,37 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="~/Themes/Default/img/favicon.png" type="image/png">
     <title>@ViewData["Title"] - Emrah Atalay</title>
-    <link rel="stylesheet" href="~/Themes/Default/css/bootstrap.css">
-    <link rel="stylesheet" href="~/Themes/Default/vendors/linericon/style.css">
-    <link rel="stylesheet" href="~/Themes/Default/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/Themes/Default/vendors/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/Themes/Default/vendors/lightbox/simpleLightbox.css">
-    <link rel="stylesheet" href="~/Themes/Default/vendors/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="~/Themes/Default/vendors/animate-css/animate.css">
-    <link rel="stylesheet" href="~/Themes/Default/vendors/jquery-ui/jquery-ui.css">
-    <!-- main css -->
-    <link rel="stylesheet" href="~/Themes/Default/css/style.css">
-    <link rel="stylesheet" href="~/Themes/Default/css/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
+    <link href="~/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/skins/aside/navy.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--static
+      kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
 
-    @RenderBody()
+    <!-- begin:: Header Mobile -->
+    <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+        <div class="kt-header-mobile__logo">
+            <a href="../index-2.html">
+                <img alt="Logo" src="~/media/logos/logo-1.png" />
+            </a>
+        </div>
+        <div class="kt-header-mobile__toolbar">
+            <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left"
+                    id="kt_aside_mobile_toggler">
+                <span></span>
+            </button>
 
-    <script src="~/Themes/Default/js/jquery-3.2.1.min.js"></script>
-    <script src="~/Themes/Default/js/popper.js"></script>
-    <script src="~/Themes/Default/js/bootstrap.min.js"></script>
-    <script src="~/Themes/Default/js/stellar.js"></script>
-    <script src="~/Themes/Default/vendors/lightbox/simpleLightbox.min.js"></script>
-    <script src="~/Themes/Default/vendors/nice-select/js/jquery.nice-select.min.js"></script>
-    <script src="~/Themes/Default/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="~/Themes/Default/vendors/isotope/isotope-min.js"></script>
-    <script src="~/Themes/Default/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="~/Themes/Default/js/jquery.ajaxchimp.min.js"></script>
-    <script src="~/Themes/Default/vendors/counter-up/jquery.waypoints.min.js"></script>
-    <script src="~/Themes/Default/vendors/flipclock/timer.js"></script>
-    <script src="~/Themes/Default/vendors/counter-up/jquery.counterup.js"></script>
-    <script src="~/Themes/Default/js/mail-script.js"></script>
-    <script src="~/Themes/Default/js/theme.js"></script>
+            <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler">
+                <i class="flaticon-more"></i>
+            </button>
+        </div>
+    </div>
+    <!-- end:: Header Mobile -->
+    <div class="kt-grid kt-grid--hor kt-grid--root">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+            @await Component.InvokeAsync("SideMenu")
+            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper">
+                @await Component.InvokeAsync("AdminHeader")
+                <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+                    @await Component.InvokeAsync("SubHeader")
+                    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+                        @RenderBody()
+                    </div>
+                </div>
+                @await Component.InvokeAsync("AdminFooter")
+            </div>
+        </div>
+    </div>
+
+    <script src="~/plugins/global/plugins.bundle.js" type="text/javascript"></script>
+    <script src="~/js/scripts.bundle.js" type="text/javascript"></script>
+    <script src="~/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+    <script src="~/js/pages/dashboard.js" type="text/javascript"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
