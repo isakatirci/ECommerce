@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Library\Entitie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUI", "Presentation\WebUI\WebUI.csproj", "{64141AA0-D54D-4578-AF19-E910F9D258F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI.Framework", "Presentation\WebUI.Framework\WebUI.Framework.csproj", "{BFFE4AD4-FE17-44F1-AE4F-51A4A1574CEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUI.Framework", "Presentation\WebUI.Framework\WebUI.Framework.csproj", "{BFFE4AD4-FE17-44F1-AE4F-51A4A1574CEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

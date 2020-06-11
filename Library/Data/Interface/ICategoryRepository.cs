@@ -8,6 +8,6 @@ namespace Data.Interface
 {
     public interface ICategoryRepository
     {
-
+        ICollection<Category> GetCategoryList();
     }
 }

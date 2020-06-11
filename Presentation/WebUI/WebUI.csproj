@@ -10,7 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="Areas\Admin\Components\" />
+    <Folder Include="Areas\Identity\Controllers\" />
+    <Folder Include="Areas\Identity\Data\" />
+    <Folder Include="Themes\Default\Views\Home\" />
+    <Folder Include="Themes\Default\Views\Shared\" />
   </ItemGroup>
 
 </Project>
