@@ -22,6 +22,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ProductBusiness>().As<IProductBusiness>();
             builder.RegisterType<ProductRepository>().As<IProductRepository>();
 
+            builder.RegisterType<CategoryBusiness>().As<ICategoryBusiness>();
+            builder.RegisterType<CategoryRepository>().As<ICategoryRepository>();
+
 
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();

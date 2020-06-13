@@ -16,6 +16,14 @@ namespace Data.Repository
         {
             _uow = uow;
         }
+
+        public void AddCategory(Category category)
+        {
+            _uow.Category.Insert(category);
+
+            _uow.SaveChanges();
+        }
+
         public ICollection<Category> GetCategoryList()
         {
             return _uow.Category.TableNoTracking.ToList();
