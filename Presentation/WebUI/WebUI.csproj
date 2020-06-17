@@ -1,14 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\Library\Business\Business.csproj" />
     <ProjectReference Include="..\WebUI.Framework\WebUI.Framework.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Areas\Identity\Controllers\" />
     <Folder Include="Areas\Identity\Data\" />
@@ -16,9 +13,13 @@
     <Folder Include="Themes\Default\Views\Shared\" />
     <Folder Include="wwwroot\css\pages\inbox\" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="wwwroot\js\site.js" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="20.1.4" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.6.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
-
 </Project>
